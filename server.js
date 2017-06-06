@@ -8,7 +8,7 @@ var fs = require('fs');
 
 var app = express(); //use app for all your express stuff
 
-//var json_data = require("./"); //json file goes here, use json_data to obtain data for wiki pages
+var json_data = require("./articles.json"); //json file goes here, use json_data to obtain data for wiki pages
 
 //allows for diff port number functionality
 var port_num = 3000;

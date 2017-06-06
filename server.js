@@ -57,7 +57,7 @@ app.get('/articles/:index', function(req,res,next){
 app.get('*', function(req,res){
 	res.statusCode = 404;
 	var args = {
-		//put args we want inside here
+		//put args we want inside here if any
 	}
 	res.render('404Page', args);
 })

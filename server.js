@@ -17,3 +17,8 @@ if(process.argv[2] == 'PORT' && process.argv.length > 3){
 }
 
 //file syncing, obtains the handlebar page templates
+//var ind
+
+
+//renders the main.handlebars stuff, default layout
+app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));

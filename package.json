@@ -1,0 +1,20 @@
+{
+  "name": "final-project-group-11",
+  "version": "1.0.0",
+  "description": "This is the final for cs 290 Web Development class made by Devon Symon and Lauren",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSU-CS290-Sp2017/final-project-group-11.git"
+  },
+  "author": "Devon Crane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSU-CS290-Sp2017/final-project-group-11/issues"
+  },
+  "homepage": "https://github.com/OSU-CS290-Sp2017/final-project-group-11#readme"
+}

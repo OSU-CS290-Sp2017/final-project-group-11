@@ -8,7 +8,7 @@ var fs = require('fs');
 
 var app = express(); //use app for all your express stuff
 
-var json_data = require("./articles.json"); //json file goes here, use json_data to obtain data for wiki pages
+var article_data = require("./articles.json"); //json file goes here, use article_data to obtain data for wiki pages
 
 //allows for diff port number functionality
 var port_num = 3000;
@@ -17,8 +17,42 @@ if(process.argv[2] == 'PORT' && process.argv.length > 3){
 }
 
 //file syncing, obtains the handlebar page templates
-//var ind
+var main_page_template = fs.readFileSync('./views/mainPage.handlebars');
+var article_page_template = fs.readFileSync('./views/404Page.handlebars');
 
 
 //renders the main.handlebars stuff, default layout
 app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+//this bad boy below handles dudes and dudettes wanting the main page like a boss
+app.get('/', function(req,res,next){
+	var args = {
+		//put args here
+	}
+	res.render('mainPage', args);
+
+})
+
+//this bad boy below handles errors like a boss
+app.get('/')
+
+//this good boy below handles errors like a boss
+app.get('*', function(req,res){
+	res.statusCode = 404;
+	var args = {
+		//put args we want inside here
+	}
+	res.render('404Page', args);
+})
+
+
+//listen listen listen shhh
+app.listen(port_num, function(){
+	console.log("Listening on port", port_num);
+})
+
+

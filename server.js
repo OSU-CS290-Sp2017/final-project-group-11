@@ -38,7 +38,18 @@ app.get('/', function(req,res,next){
 })
 
 //this bad boy below handles errors like a boss
-app.get('/')
+app.get('/articles/:index', function(req,res,next){
+	var has_article = article_data[req.params.index];
+	if(has_article){
+		var args = {
+			//put args here
+		};
+		res.render('articlePage', args);
+	}
+	else{
+		next();
+	}
+})
 
 //this good boy below handles errors like a boss
 app.get('*', function(req,res){

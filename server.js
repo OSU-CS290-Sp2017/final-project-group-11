@@ -31,10 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //this bad boy below handles dudes and dudettes wanting the main page like a boss
 app.get('/', function(req,res,next){
 	var args = {
-		//put args here
+		article_data: article_data
 	}
 	res.render('mainPage', args);
-
 })
 
 //this bad boy below handles errors like a boss
@@ -42,10 +41,13 @@ app.get('/articles/:index', function(req,res,next){
 	var has_article = article_data[req.params.index];
 	if(has_article){
 		var args = {
-			//put args here
+			article_data: [{title: article_data[req.params.index].title,
+			content: article_data[req.params.index].content,
+			author: article_data[req.params.index].author,
+			image: image_data[req.params.index].author}]
 		};
 		res.render('articlePage', args);
-	}
+		}
 	else{
 		next();
 	}

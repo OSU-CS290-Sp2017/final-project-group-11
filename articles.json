@@ -26,7 +26,7 @@
   {
     "title": "Favorite Beverage",
     "content": "Despite being seen drinking coffee every morning in lecture with his OSU coffee mug,
-    when asked what his favorite beverage was, Dr.Hess was able to answer without though,
+    when asked what his favorite beverage was, Dr.Hess was able to answer without thought,
     'Beer!'.",
     "description": "Beer.",
     "author": "Brew Master",
@@ -48,7 +48,7 @@
     "content": "The majority of Dr.Hess's family lives in his home state of Pennsylvania,
     but he has a brother that resides in Colorodo.
     Dr.Hess is a newly wed and married his wife just four short months ago.
-    They have been seeing eachother for 3 years. Congratulations to Dr.Hess on his recent marriage.",
+    They have been seeing each other for 3 years. Congratulations to Dr.Hess on his recent marriage.",
     "description": "Family in Pennsylvania. Recently married.",
     "author": "",
     "image": ""
@@ -66,30 +66,30 @@
   },
   {
     "title": "Favorite Movie",
-    "content": "",
-    "description": "",
-    "author": "",
-    "image": ""
+    "content": "The favorite movie of Master Hess is a paradox because it is the Matrix: a movie based on Master Hess's life. Prior to teaching at Oregon State University, he was the Chosen One who would bring balance to everything that exists. When offered the chance to take either the blue pill or the red pill, he grabbed Morpheus' hidden secret third arm and chose the green pill, opting instead for ultimate freedom and democracy (which is considered the greatest choice of all). We all have Master Hess to thank for saving us from living inside a computer-generated world. ",
+    "description": "Hess brought the wonderland to the real world.",
+    "author": "The Chosen One",
+    "image": "https://qph.ec.quoracdn.net/main-qimg-ed23d9866da0882d2b994338a31dc8fa"
   },
   {
     "title": "Classes Taught",
-    "content": "",
-    "description": "",
-    "author": "",
+    "content": "While Prime Minister Hess is well known for teaching many interesting CS classes, such as Web Development, Mobile Development, Computer Ethics and Society, CS162, Data Structures, and Cloud API, it is also worth noting some of the other classes that he teaches, such as Meme Development 290, Cat Ethics and Society, CAT162, Pizza Structures, and Beer API. Many of these latter classes are not well known to the public but upon inspection (very thorough inspection), one can find said classes within the OSU catalog. Sign up today before all the spots are gone!!!",
+    "description": "Hess has got some class.",
+    "author": "The Oregon of the State of University",
     "image": ""
   },
   {
     "title": "Favorite Music",
-    "content": "",
-    "description": "",
-    "author": "",
-    "image": ""
+    "content": "Captain-Pirate-King Hess enjoys whatever is good as his favorite brand of music, thus exemplifying how diverse his love for life, liberty, and happiness is. He doesn't enjoy whatever is bad, which is good, instead opting for whatever is good, which is not bad. It's good that he doesn't like bad songs and instead likes not bad songs which are also good songs because it's good that he's not into bad songs but into good songs instead. A song from his childhood that has stayed near and dear to his heart is Bryan Adams' rendition of the Summer of 69, a delightful classic. ",
+    "description": "I like pancakes.",
+    "author": "Fruity Shockwave Mixer Man",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2b/Bryan_Adams_-_Summer_of_%2769.jpg"
   },
   {
     "title": "Favorite Color",
-    "content": "",
+    "content": "Falcon Hess's favorite color is red, which means that he is super rad. Anyone who likes the color red definitely mains Roy on Super Smash Bros, and even though he's a lower tier than some of the popular options such as Marth, Fox, and Meta Knight, Hess has enough fundamentals to dominate in the pro leagues with the best of them. Although he also utilizes Charizard, Ness, and Diddy Kong, he shines most when implementing a full frontal defensive blitzkreig attack strategy with our boy Roy who's our boy. Nothing can withstand the fiery power of his binding blade, especially when he's up against the likes of Pokemon, characters from Fire Emblem, characters from the Mario series, characters from the Metroid series, characters from whatever game Captain Falcon is from, and characters from the rest of the games that I don't remember. ",
     "description": "Rad red.",
-    "author": "",
-    "image": ""
+    "author": "Lauren Gastineau",
+    "image": "http://vignette2.wikia.nocookie.net/fireemblem/images/0/08/Roy_FE_Heroes_DramaticPose.png/revision/latest?cb=20170122062204"
   },
 ]

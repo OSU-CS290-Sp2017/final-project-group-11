@@ -11,19 +11,157 @@
 
 
   </head>
-  <body>
-    <main>
+
+  <body >
+    <div class="navbar">
+      <ul class="navlist">
+        <li class="navobj navlink active"><a href="#">Home<!-- this will dynamicly change form home to article--></a></li>
+        <!-- this will not be there on the man page but will be there for articles -->
+        <li class="navobj navlink"><button type="button" id="edit-button">Edit Article</button></li>
+        <li class="navobj navbar-search">
+          <input type="text" id="navbar-search-input" placeholder="Search...">
+          <!-- <button type="button" id="navbar-search-button"><i class="search"></i></button> -->
+        </li>
+      </ul>
+
+    </div>
+    <div class="panel">
+      <div class="panel-box">
+        <a  href="#" title="Visit the main page"><img id="logo" width="200px"
+          height="150px" src="images/Logo.jpg" alt="log of Hessipedia"></a>
+        </div>
+
+        <div class = "panel-nav">
+          <ul>
+            <li class="navobj navlink pannel-link"><a href="#">Home</a></li>
+            <li class="navobj navlink pannel-link"><a href="#">Random Article</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- place holder articles for testing -->
+    <main class = "article-container">
+
       <article class="article">
     <div class="article-content">
       <p class="article-title">
-        <a href="#">TWIT AUTHOR GOES HERE</a>
+        <a href="#">Article</a>
       </p>
       <p class="article-discription">
         TWIT TEXT GOES HERE
       </p>
     </div>
   </article>
+
+  <article class="article">
+<div class="article-content">
+  <p class="article-title">
+    <a href="#">Article</a>
+  </p>
+  <p class="article-discription">
+    TWIT TEXT GOES HERE
+  </p>
+</div>
+</article>
+
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  TWIT TEXT GOES HERE
+</p>
+</div>
+</article>
+
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  TWIT TEXT GOES HERE
+</p>
+</div>
+</article>
+
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  TWIT TEXT GOES HERE
+</p>
+</div>
+</article>
+
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  TWIT TEXT GOES HERE
+</p>
+</div>
+</article>
+
+  <article class="article">
+<div class="article-content">
+  <p class="article-title">
+    <a href="#">Article</a>
+  </p>
+  <p class="article-discription">
+    First article
+  </p>
+</div>
+</article>
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  second article
+</p>
+</div>
+</article>
+<article class="article">
+<div class="article-content">
+<p class="article-title">
+  <a href="#">Article</a>
+</p>
+<p class="article-discription">
+  Third article
+</p>
+</div>
+</article>
     </main>
+
+    <!-- here is the modal for editing articles! -->
+    <!-- <div id="modal-background" class="hidde"></div>
+    <div id="eddit-article-modal" class="hidden">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h3>Edit The Article Here!</h3>
+            <button type="button" class="modal-close-button"></button>
+          </div>
+          <div class="modal-body">
+            <div class="article-input">
+              <label for="twit-text-input">Article text</label>
+              <textarea id="article-text-input"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="modal-cancel-button">Cancel</button>
+              <button type="button" class="modal-accept-button">Publish Article</button>
+            </div>
+          </div>
+        </div>
+    </div> -->
 
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.runtime.js"></script>

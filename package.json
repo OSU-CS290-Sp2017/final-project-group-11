@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/OSU-CS290-Sp2017/final-project-group-11/issues"
   },
-  "homepage": "https://github.com/OSU-CS290-Sp2017/final-project-group-11#readme"
+  "homepage": "https://github.com/OSU-CS290-Sp2017/final-project-group-11#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "handlebars": "^4.0.10"
+  }
 }

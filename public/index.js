@@ -41,6 +41,27 @@ function articleSearch(){
   });
 }
 
+function random_article(){
+	//grab all the container of all the articles and put them into this bad boy
+	var articleContainer = document.querySelector('article-container');
+
+	//set various indexes which are cool
+	var current_index = 0;
+	var max_index = article.Container.length - 1;
+	var desired_index = Math.floor((Math.random() * (max_index)));
+
+	while(current_index < max_index){
+		if(current_index == desired_index){
+			//go to this particular articlecontainer's child
+			break;
+		}
+		else{
+			current_index += 1;
+			articleContainer.removeChild(articleContainer.firstChild);
+		}
+	}
+}
+
 var editArticleButton = document.getElementById('edit-buton');
 editArticleButton.addEventListener('click', showEditArticleModal);
 
@@ -52,3 +73,6 @@ modalAcceptButton.addEventListener('click', insertArticleEdits);
 
 var searchInut = document.getElementById('navbar-search-input');
 searchInut.addEventListener('input', articleSearch);
+
+var random_article_link = document.getElementById('random_article_button'); //CHECK ID in the actual html/handlebars stuff
+random_article_link.addEventListener('click', random_article);

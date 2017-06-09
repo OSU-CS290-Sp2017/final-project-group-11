@@ -65,7 +65,7 @@ app.get('*', function(req,res){
 
 //listen listen listen shhh
 app.listen(port_num, function(){
-	console.log("Listening on port", port_num);
+	console.log("Yeaaaaaahhhhh KZR900 Babyyyyyy Listening on port", port_num);
 })
 
 

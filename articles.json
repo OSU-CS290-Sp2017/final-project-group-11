@@ -15,8 +15,7 @@
   },
   {
     "title": "Favorite Beverage",
-    "content": "Despite being seen drinking coffee every morning in lecture with his OSU coffee mug, when asked what his favorite beverage was, Dr.Hess was able to answer without thought,
-    'Beer!'.",
+    "content": "Despite being seen drinking coffee every morning in lecture with his OSU coffee mug, when asked what his favorite beverage was, Dr.Hess was able to answer without thought: Beer",
     "description": "Beer.",
     "author": "Brew Master",
     "image": "https://cdnimg.webstaurantstore.com/images/products/large/132200/956032.jpg"
@@ -69,5 +68,5 @@
     "description": "Rad red.",
     "author": "Lauren Gastineau",
     "image": "http://vignette2.wikia.nocookie.net/fireemblem/images/0/08/Roy_FE_Heroes_DramaticPose.png/revision/latest?cb=20170122062204"
-  },
+  }
 ]

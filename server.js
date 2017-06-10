@@ -44,7 +44,7 @@ app.get('/articles/:index', function(req,res,next){
 			article_data: [{title: article_data[req.params.index].title,
 			content: article_data[req.params.index].content,
 			author: article_data[req.params.index].author,
-			image: image_data[req.params.index].author}]
+			image: article_data[req.params.index].image}]
 		};
 		res.render('articlePage', args);
 		}
@@ -65,7 +65,7 @@ app.get('*', function(req,res){
 
 //listen listen listen shhh
 app.listen(port_num, function(){
-	console.log("Listening on port", port_num);
+	console.log("Yeaaaaaahhhhh KZR900 Babyyyyyy Listening on port", port_num);
 })
 
 

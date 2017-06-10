@@ -1,12 +1,14 @@
 // this is just a place holder for now
 var allArticleElems = [];
 
+
+console.log("JS IS WORKING");
 function showEditArticleModal(){
   var modalBackground = document.getElementById('modal-background');
   var editArticleModal = document.getElementById('edit-article-modal');
 
 //Show article edit modal and modal backdrop
-  //modalBackground.classList.remove('hidden');
+  modalBackground.classList.remove('hidden');
   editArticleModal.classList.remove('hidden');
 }
 
@@ -18,9 +20,11 @@ function closeEditArticleModal(){
   modalBackground.classList.add('hidden');
   editArticleModal.classList.add('hidden');
 }
-function updateArticle(articleText){
-  var
-}
+
+//WHY IS THIS HERE
+// function updateArticle(articleText){
+//   var
+// }
 
 
 function insertArticleEdits(){
@@ -97,7 +101,7 @@ searchButton.addEventListener('click', articleSearch);
 var searchInput = document.getElementById('navbar-search-input');
 searchInput.addEventListener('input', articleSearch);
 
-var random_article_link = document.getElementById('random_article_button'); //CHECK ID in the actual html/handlebars stuff
+var random_article_link = document.getElementById('random_article'); //CHECK ID in the actual html/handlebars stuff
 random_article_link.addEventListener('click', random_article);
 
 });

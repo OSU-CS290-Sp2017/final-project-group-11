@@ -39,7 +39,6 @@ function insertArticleEdits(){
  }
 }
 
-
 function articleSearch(){
   var searchInput = document.getElementById('navbar-search-input').value;
   searchInput = searchInput ? searchInput.trim().toLowerCase(): ''; //trim function removes white space around string and toLowerCase makes all letters in string lower case
@@ -92,8 +91,8 @@ editArticleButton.addEventListener('click', showEditArticleModal);
 var modalCancelButton = document.querySelector('#edit-article-modal .modal-cancel-button');
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
-var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
-modalAcceptButton.addEventListener('click', insertArticleEdits);
+//var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
+//modalAcceptButton.addEventListener('click', insertArticleEdits);
 
 var searchButton = document.getElementById('navbar-search-button');
 searchButton.addEventListener('click', articleSearch);

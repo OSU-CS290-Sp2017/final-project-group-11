@@ -21,7 +21,10 @@ function closeEditArticleModal(){
   editArticleModal.classList.add('hidden');
 }
 
+<<<<<<< Updated upstream
 //WHY IS THIS HERE
+=======
+>>>>>>> Stashed changes
 // function updateArticle(articleText){
 //   var
 // }
@@ -38,7 +41,6 @@ function insertArticleEdits(){
    alert('You cannot leave an article blank! Since you did not like the original content get creative and write your own article!');
  }
 }
-
 
 function articleSearch(){
   var searchInput = document.getElementById('navbar-search-input').value;
@@ -92,8 +94,8 @@ editArticleButton.addEventListener('click', showEditArticleModal);
 var modalCancelButton = document.querySelector('#edit-article-modal .modal-cancel-button');
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
-var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
-modalAcceptButton.addEventListener('click', insertArticleEdits);
+//var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
+//modalAcceptButton.addEventListener('click', insertArticleEdits);
 
 var searchButton = document.getElementById('navbar-search-button');
 searchButton.addEventListener('click', articleSearch);

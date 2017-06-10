@@ -21,10 +21,7 @@ function closeEditArticleModal(){
   editArticleModal.classList.add('hidden');
 }
 
-<<<<<<< Updated upstream
 //WHY IS THIS HERE
-=======
->>>>>>> Stashed changes
 // function updateArticle(articleText){
 //   var
 // }

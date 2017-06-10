@@ -1,8 +1,8 @@
 // this is just a place holder for now
 var allArticleElems = [];
 
-
 console.log("JS IS WORKING");
+
 function showEditArticleModal(){
   var modalBackground = document.getElementById('modal-background');
   var editArticleModal = document.getElementById('edit-article-modal');
@@ -91,8 +91,8 @@ editArticleButton.addEventListener('click', showEditArticleModal);
 var modalCancelButton = document.querySelector('#edit-article-modal .modal-cancel-button');
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
-//var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
-//modalAcceptButton.addEventListener('click', insertArticleEdits);
+// var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
+// modalAcceptButton.addEventListener('click', insertArticleEdits);
 
 var searchButton = document.getElementById('navbar-search-button');
 searchButton.addEventListener('click', articleSearch);

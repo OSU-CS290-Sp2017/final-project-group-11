@@ -288,6 +288,9 @@ a:hover, a:focus{
 .article-title-main{
 }
 
+.article-title{
+  font-weight: bold;
+}
 .article-info h2{
 margin-top: 0;
 border-bottom: 1px solid #319df6;

@@ -10,6 +10,16 @@ function showEditArticleModal(){
 //Show article edit modal and modal backdrop
   modalBackground.classList.remove('hidden');
   editArticleModal.classList.remove('hidden');
+
+//adds article content to article text input for editing
+  // var articleTemplate = Handlebars.templates.article_for_article;
+  // var templateArgs = {
+  //   description: content
+  // };
+  // var articleContent = articleTemplate(templateArgs);
+
+  //document.getElementById('article-text-input').value = articleContent;
+  document.getElementById('article-text-input').value = "hello world."
 }
 
 function closeEditArticleModal(){
@@ -21,22 +31,39 @@ function closeEditArticleModal(){
   editArticleModal.classList.add('hidden');
 }
 
-//WHY IS THIS HERE
-// function updateArticle(articleText){
-//   var
-// }
-
+function getArticleIDFromLocation(){
+  var pathComponents = window.location.pathname.split('/');
+  if(pathComponents[0] !== '' && pathComponents[1] !== 'article'){ //might not be 'article', need to test
+    return null;
+  }
+  return pathComponents[2];
+}
 
 function insertArticleEdits(){
- var articleEdit = document.getElementById('article-text-input');
+  var newContent = document.getElementById("article-text-input").value || '';
+  if(newContent.trim()){
+    var articleID = getArticleIDFromLocation();
+    if(articleID){
+      console.log("== Article ID:", articleID);
 
- if(articleEdit){
-   var updatedArticle =
-   closeCreateTwitModal();
- }
- else{
-   alert('You cannot leave an article blank! Since you did not like the original content get creative and write your own article!');
- }
+      storeNewContnet(articleID, newContent, function(err){
+        if(err){
+          alert("Unable to save new article content. Got this error:\n\n" + err);
+        }
+        else{
+
+          var articleTemplate = Handlebars.templates.article_for_article;
+          var templateArgs = {
+            description: newContent
+          };
+          var newArticleContent = articleTemplate(templateArgs);
+          var articleContainer = document.querySelector('.article');
+          articleContainer.insertAdjacentHTML('beforend', newArticleContent);
+        }
+      });
+    }
+    closeEditArticleModal();
+  }
 }
 
 function articleSearch(){
@@ -91,11 +118,11 @@ editArticleButton.addEventListener('click', showEditArticleModal);
 var modalCancelButton = document.querySelector('#edit-article-modal .modal-cancel-button');
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
-// var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
-// modalAcceptButton.addEventListener('click', insertArticleEdits);
+ var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
+ modalAcceptButton.addEventListener('click', insertArticleEdits);
 
-var searchButton = document.getElementById('navbar-search-button');
-searchButton.addEventListener('click', articleSearch);
+//var searchButton = document.getElementById('navbar-search-button');
+//searchButton.addEventListener('click', articleSearch);
 
 var searchInput = document.getElementById('navbar-search-input');
 searchInput.addEventListener('input', articleSearch);

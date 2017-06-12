@@ -68,6 +68,26 @@ a:hover, a:focus{
   background-color: #fff;
 }
 
+.error-container{
+  margin-left: 170px;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+
+  padding: 1em;
+  flex-wrap: wrap;
+  border: 1px solid #319df6;
+  border-right: 0;
+  background-color: rgba(128,128,128,.14);
+
+}
+
+.error-message{
+  margin-top: 8px;
+  text-align: right;
+  font-weight: bold;
+}
+
 .article-container{
   margin-left: 170px;
   display: flex;

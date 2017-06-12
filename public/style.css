@@ -5,6 +5,7 @@ body{
   font-family: Roboto, sans-serif;
   margin: 0;
   position: fixed;
+
 }
 
 a{
@@ -71,13 +72,15 @@ a:hover, a:focus{
   margin-left: 170px;
   display: flex;
   position: fixed;
-  z-index: 4;
+  z-index: 999;
 
   padding: 1em;
   flex-wrap: wrap;
   border: 1px solid #319df6;
   border-right: 0;
   background-color: rgba(128,128,128,.14);
+  overflow: scroll;
+  white-space: ;
 }
 
 .article{

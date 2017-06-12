@@ -19,7 +19,7 @@ function showEditArticleModal(){
   // var articleContent = articleTemplate(templateArgs);
 
   //document.getElementById('article-text-input').value = articleContent;
-  document.getElementById('article-text-input').value = "hello world."
+  //document.getElementById('article-text-input').value = "hello world."
 }
 
 function closeEditArticleModal(){
@@ -39,8 +39,18 @@ function getArticleIDFromLocation(){
   return pathComponents[2];
 }
 
-function insertArticleEdits(){
+// function generateNewArticle(articleTitle, articleDescription){
+//   var articleTemplate = Handlebars.templates.article_for_main;
+//   var articleData = {
+//     title: articleTitle,
+//     description: articleDescription
+//   };
+//   return articleTemplate(articleData);
+// }
+
+function insertNewArticle(){
   var newContent = document.getElementById("article-text-input").value || '';
+
   if(newContent.trim()){
     var articleID = getArticleIDFromLocation();
     if(articleID){
@@ -54,7 +64,7 @@ function insertArticleEdits(){
 
           var articleTemplate = Handlebars.templates.article_for_article;
           var templateArgs = {
-            description: newContent
+            content: newContent
           };
           var newArticleContent = articleTemplate(templateArgs);
           var articleContainer = document.querySelector('.article');
@@ -64,6 +74,29 @@ function insertArticleEdits(){
     }
     closeEditArticleModal();
   }
+  else{
+    alert('You must enter new article content.');
+  }
+}
+
+function storeNewArticleContent(articleID, content, callback){
+  var postURL = "/articles/" + articleID + "/addContent";
+
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST, postURL');
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function(event){
+    var error;
+    if(event.target.status !== 200){
+      error = event.target.response;
+    }
+    callback(error);
+  });
+  var postBody = {
+    content: content
+  };
+  portRequest.send(JSON.stringify(postBody));
 }
 
 function articleSearch(){
@@ -119,7 +152,7 @@ var modalCancelButton = document.querySelector('#edit-article-modal .modal-cance
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
  var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
- modalAcceptButton.addEventListener('click', insertArticleEdits);
+ modalAcceptButton.addEventListener('click', insertNewArticle);
 
 //var searchButton = document.getElementById('navbar-search-button');
 //searchButton.addEventListener('click', articleSearch);

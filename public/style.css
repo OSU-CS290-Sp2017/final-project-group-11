@@ -80,7 +80,7 @@ a:hover, a:focus{
   border-right: 0;
   background-color: rgba(128,128,128,.14);
   overflow: scroll;
-  white-space: ;
+  white-space:normal;
 }
 
 .article{

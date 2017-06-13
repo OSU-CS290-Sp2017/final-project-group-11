@@ -309,6 +309,14 @@ a:hover, a:focus{
   padding-left: 20px;
 }
 
+.article-author{
+  font-size: 20px;
+  padding-left: 20px;
+  border-bottom: 1px solid #319df6;
+  margin: 0;
+    margin-bottom: 20px;
+}
+
 .content-main{
   padding: 20px;
 }

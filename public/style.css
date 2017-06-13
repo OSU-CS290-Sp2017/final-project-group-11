@@ -99,8 +99,8 @@ a:hover, a:focus{
   border: 1px solid #319df6;
   border-right: 0;
   background-color: rgba(128,128,128,.14);
-  overflow: scroll;
-  white-space:normal;
+  height: 610px;
+    overflow: auto;
 }
 
 .article{
@@ -111,6 +111,12 @@ a:hover, a:focus{
   border: 1px solid #dadada;
   border-radius: 2px;
   background-color: #fff;
+}
+
+.article-main{
+  border: 1px solid #dadada;
+  background-color: #fff;
+  overflow: auto;
 }
 
 .article-content {
@@ -300,15 +306,16 @@ a:hover, a:focus{
 }
 
 .article-image{
-
+  padding-left: 20px;
 }
 
 .content-main{
-  padding: 0;
-  margin: 0;
+  padding: 20px;
 }
 
 .article-title-main{
+  padding-left: 10px;
+  border-bottom: 1px solid #319df6;
 }
 
 .article-title{

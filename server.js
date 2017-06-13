@@ -38,6 +38,7 @@ app.get('/', function(req,res,next){
 
 //this bad boy below handles errors like a boss
 app.get('/articles/:index', function(req,res,next){
+	console.log(req.params.index);
 	var has_article = article_data[req.params.index];
 	if(has_article){
 		var args = {
@@ -67,5 +68,3 @@ app.get('*', function(req,res){
 app.listen(port_num, function(){
 	console.log("Yeaaaaaahhhhh KZR900 Babyyyyyy Listening on port", port_num);
 })
-
-

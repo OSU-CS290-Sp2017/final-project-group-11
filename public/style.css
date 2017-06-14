@@ -171,8 +171,8 @@ a:hover, a:focus{
 }*/
 
 #edit-button:hover,#edit-button:focus{
-  cursor: pointer;
-  text-decoration: underline;
+  color: #319df6;
+  outline: none;
 }
 
 #edit-button:focus{

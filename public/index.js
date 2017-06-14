@@ -36,8 +36,8 @@ function storeNewArticle(articleID, newTitle, newContent, newDescription, newAut
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST, postURL');
   postRequest.setRequestHeader('Content-Type', 'application/json');*/
-	
- 
+
+
 
   var postBody = {
     title: newTitle,
@@ -79,6 +79,20 @@ function articleSearch(){
     }
   });
 }
+
+// function clearPhotoInputValues() {
+//
+//    var inputElemTitle = document.getElementById("article-title-input");
+//    var inputElemsContent = document.getElementById("article-content-input");
+//    var inputElemsDescription = document.getElementById("article-description-input");
+//    var inputElemsAuthor = document.getElementById("article-author-input");
+//    var inputElemsImage = document.getElementById("article-image-input");
+//
+//    for (var i = 0; i < inputElems.length; i++) {
+//      var input = inputElemTitle[i].querySelector('input, textarea');
+//      input.value = '';
+//    }
+//  }
 
 function random_article(){
 	console.log("inside random article link");

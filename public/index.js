@@ -29,61 +29,16 @@ function getArticleIDFromLocation(){
   return pathComponents[2];
 }
 
-function insertNewArticle(){
-  var newTitle = document.getElementById("article-title-input").value || '';
-  var newContent = document.getElementById("article-content-input").value || '';
-  var newDescription = document.getElementById("article-description-input").value || '';
-  var newAuthor = document.getElementById("article-author-input").value || '';
-  var newImage = document.getElementById("article-image-input").value || '';
 
-  // if(newImage.trim()){
-  //   var articleID = getArticleIDFromLocation();
-  //   if(articleID){
-  //     console.log("== Article ID:", articleID);
-
-      // storeNewArticle(articleID, newContent, newDescription, newAuthor, newImage, function(err){
-        // if(err){
-        //   alert("Unable to save new article. Got this error:\n\n" + err);
-        // }
-        // else{
-
-          var articleTemplate = Handlebars.templates.article_for_main;
-          var templateArgs = {
-            title: newTitle,
-            content: newContent,
-            description: newDescription,
-            author: newAuthor,
-            image: newImage
-          };
-
-          var newArticle = articleTemplate(templateArgs);
-          var articleContainer = document.querySelector('.article-container');
-          articleContainer.insertAdjacentHTML('beforend', newArticle);
-          allArticleElems.push(newArticle);
-        // }
-      // });
-    // }
-    closeEditArticleModal();
-  //}
-  // else{
-  //   alert('You must enter article content!');
-  // }
-}
-
-function storeNewArticle(articleID, newTitle, newContent, newDescription, newAuthor, newImage, callback){
-  var postURL = "/articles/" + articleID + "/addArticle";
+function storeNewArticle(articleID, newTitle, newContent, newDescription, newAuthor, newImage){
+ /* var postURL = "/articles/" + articleID + "/addArticle";
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST, postURL');
-  postRequest.setRequestHeader('Content-Type', 'application/json');
+  postRequest.setRequestHeader('Content-Type', 'application/json');*/
+	
+ 
 
-  postRequest.addEventListener('load', function(event){
-    var error;
-    if(event.target.status !== 200){
-      error = event.target.response;
-    }
-    callback(error);
-  });
   var postBody = {
     title: newTitle,
     content: newContent,
@@ -92,6 +47,19 @@ function storeNewArticle(articleID, newTitle, newContent, newDescription, newAut
     image: newImage
   };
   portRequest.send(JSON.stringify(postBody));
+}
+
+
+function insertNewArticle(){
+  var newTitle = document.getElementById("article-title-input").value || '';
+  var newContent = document.getElementById("article-content-input").value || '';
+  var newDescription = document.getElementById("article-description-input").value || '';
+  var newAuthor = document.getElementById("article-author-input").value || '';
+  var newImage = document.getElementById("article-image-input").value || '';
+
+ // var new_article_id = stuff;
+
+  storeNewArticle(new_article_id, newTitle, newContent, newDescription, newAuthor, newImage);
 }
 
 function articleSearch(){

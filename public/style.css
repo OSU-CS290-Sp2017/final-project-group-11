@@ -316,6 +316,16 @@ a:hover, a:focus{
   /*overflow: scroll;*/
  }
 
+#articleForArticles.article-main{
+   flex: 1 1 80%;
+   border: 1px solid #dadada;
+   background-color: #fff;
+   overflow: auto;
+   max-width:900px;
+   min-height:500px;
+   /*overflow: scroll;*/
+  }
+
  .article-main h2{
    margin-top: 0;
    border-bottom: 1px solid #319df6;
@@ -325,7 +335,7 @@ a:hover, a:focus{
 
 #articleForArticles.article-container {
    margin-left: 170px;
-   /*display: flex;*/
+   display: flex;
    position: fixed;
    z-index: 999;
    padding: 1em;

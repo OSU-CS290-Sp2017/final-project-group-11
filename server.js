@@ -73,6 +73,26 @@ app.get('*', function(req,res){
 	res.render('404Page', args);
 })
 
+// app.post('/articles/:index/addArticle', function(req, res, next){
+// 	var article = req.params.index;
+// 	console.log(" == got post request for", index);
+// 	var article = articles[req.params.index];
+//
+// 	if(article){
+// 		if(req.body && req.body.url{
+// 			var newArticle = {
+// 				title: req.body.title,
+// 				content: req.body.content,
+// 				description: req.body.description,
+// 				author: req.body.author,
+// 				image: req.body.url
+// 			};
+// 			article.newArticle || [];
+//
+// 		})
+// 	}
+// 
+// })
 
 //listen listen listen shhh
 app.listen(port_num, function(){

@@ -10,16 +10,6 @@ function showEditArticleModal(){
 //Show article edit modal and modal backdrop
   modalBackground.classList.remove('hidden');
   editArticleModal.classList.remove('hidden');
-
-//adds article content to article text input for editing
-  // var articleTemplate = Handlebars.templates.article_for_article;
-  // var templateArgs = {
-  //   description: content
-  // };
-  // var articleContent = articleTemplate(templateArgs);
-
-  //document.getElementById('article-text-input').value = articleContent;
-  //document.getElementById('article-text-input').value = "hello world."
 }
 
 function closeEditArticleModal(){
@@ -39,48 +29,49 @@ function getArticleIDFromLocation(){
   return pathComponents[2];
 }
 
-// function generateNewArticle(articleTitle, articleDescription){
-//   var articleTemplate = Handlebars.templates.article_for_main;
-//   var articleData = {
-//     title: articleTitle,
-//     description: articleDescription
-//   };
-//   return articleTemplate(articleData);
-// }
-
 function insertNewArticle(){
-  var newContent = document.getElementById("article-text-input").value || '';
+  var newTitle = document.getElementById("article-title-input").value || '';
+  var newContent = document.getElementById("article-content-input").value || '';
+  var newDescription = document.getElementById("article-description-input").value || '';
+  var newAuthor = document.getElementById("article-author-input").value || '';
+  var newImage = document.getElementById("article-image-input").value || '';
 
-  if(newContent.trim()){
-    var articleID = getArticleIDFromLocation();
-    if(articleID){
-      console.log("== Article ID:", articleID);
+  // if(newImage.trim()){
+  //   var articleID = getArticleIDFromLocation();
+  //   if(articleID){
+  //     console.log("== Article ID:", articleID);
 
-      storeNewContnet(articleID, newContent, function(err){
-        if(err){
-          alert("Unable to save new article content. Got this error:\n\n" + err);
-        }
-        else{
+      // storeNewArticle(articleID, newContent, newDescription, newAuthor, newImage, function(err){
+        // if(err){
+        //   alert("Unable to save new article. Got this error:\n\n" + err);
+        // }
+        // else{
 
-          var articleTemplate = Handlebars.templates.article_for_article;
+          var articleTemplate = Handlebars.templates.article_for_main;
           var templateArgs = {
-            content: newContent
+            title: newTitle,
+            content: newContent,
+            description: newDescription,
+            author: newAuthor,
+            image: newImage
           };
-          var newArticleContent = articleTemplate(templateArgs);
-          var articleContainer = document.querySelector('.article');
-          articleContainer.insertAdjacentHTML('beforend', newArticleContent);
-        }
-      });
-    }
+
+          var newArticle = articleTemplate(templateArgs);
+          var articleContainer = document.querySelector('.article-container');
+          articleContainer.insertAdjacentHTML('beforend', newArticle);
+          allArticleElems.push(newArticle);
+        // }
+      // });
+    // }
     closeEditArticleModal();
-  }
-  else{
-    alert('You must enter new article content.');
-  }
+  //}
+  // else{
+  //   alert('You must enter article content!');
+  // }
 }
 
-function storeNewArticleContent(articleID, content, callback){
-  var postURL = "/articles/" + articleID + "/addContent";
+function storeNewArticle(articleID, newTitle, newContent, newDescription, newAuthor, newImage, callback){
+  var postURL = "/articles/" + articleID + "/addArticle";
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST, postURL');
@@ -94,7 +85,11 @@ function storeNewArticleContent(articleID, content, callback){
     callback(error);
   });
   var postBody = {
-    content: content
+    title: newTitle,
+    content: newContent,
+    description: newDescription,
+    author: newAuthor,
+    image: newImage
   };
   portRequest.send(JSON.stringify(postBody));
 }
@@ -154,9 +149,6 @@ modalCancelButton.addEventListener('click', closeEditArticleModal);
 
  var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
  modalAcceptButton.addEventListener('click', insertNewArticle);
-
-//var searchButton = document.getElementById('navbar-search-button');
-//searchButton.addEventListener('click', articleSearch);
 
 var searchInput = document.getElementById('navbar-search-input');
 searchInput.addEventListener('input', articleSearch);

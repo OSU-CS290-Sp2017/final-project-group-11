@@ -118,6 +118,7 @@ function articleSearch(){
 }
 
 function random_article(){
+	console.log("inside random article link");
 	//grab all the container of all the articles and put them into this bad boy
 	var articleContainer = document.querySelector('article-container');
 

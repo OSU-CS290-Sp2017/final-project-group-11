@@ -35,6 +35,7 @@ a{
 a {
   color: #343434;
 }
+
 a:hover, a:focus{
   color: #319df6;
   outline: none;
@@ -93,14 +94,13 @@ a:hover, a:focus{
   display: flex;
   position: fixed;
   z-index: 999;
-
   padding: 1em;
   flex-wrap: wrap;
   border: 1px solid #319df6;
   border-right: 0;
   background-color: rgba(128,128,128,.14);
-  height: 610px;
-    overflow: auto;
+  height: 520px;
+  overflow: auto;
 }
 
 .article{
@@ -142,12 +142,12 @@ a:hover, a:focus{
 
 #edit-button {
   border: none;
-      background-color: white;
-      cursor: pointer;
-      font-size: inherit;
-      font: inherit;
-      background: none;
-      color: inherit;
+  background-color: white;
+  cursor: pointer;
+  font-size: inherit;
+  font: inherit;
+  background: none;
+  color: inherit;
 }
 
 #edit-button:hover,#edit-button:focus{
@@ -275,13 +275,13 @@ a:hover, a:focus{
 
 .panel{
   height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    padding-top: 20px;
-    transition: 0.5s;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  transition: 0.5s;
 
   }
 
@@ -300,11 +300,44 @@ a:hover, a:focus{
 
 .panel-nav{
   border-top: 1px solid #319df6;
-    background-color: rgba(128,128,128,.14);
-    display: inline-block;
-    height: 100%;
-    padding-right: 65px;
+  background-color: rgba(128,128,128,.14);
+  display: inline-block;
+  height: 100%;
+  padding-right: 65px;
 }
+
+.article-main{
+  flex: 1 1 80%;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  overflow: auto;
+  max-width:800px;
+  max-height:500px;
+  /*overflow: scroll;*/
+ }
+
+ .article-main h2{
+   margin-top: 0;
+   border-bottom: 1px solid #319df6;
+   font-size: 50px;
+   text-align: center
+ }
+
+#articleForArticles.article-container {
+   margin-left: 170px;
+   /*display: flex;*/
+   position: fixed;
+   z-index: 999;
+   padding: 1em;
+   border: 1px solid #319df6;
+   border-right: 0;
+   background-color: rgba(128,128,128,.14);
+   height: 610px;
+   overflow: auto;
+   display: inline-block;
+   width: 100%;
+   padding-right: 65px;
+ }
 
 .article-image{
   padding-left: 20px;
@@ -315,25 +348,34 @@ a:hover, a:focus{
   padding-left: 20px;
   border-bottom: 1px solid #319df6;
   margin: 0;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
 }
 
 .content-main{
   padding: 20px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  overflow: auto;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .article-title-main{
   padding-left: 10px;
   border-bottom: 1px solid #319df6;
+  text-align: center;
+  font-size: 30px;
 }
 
 .article-title{
   font-weight: bold;
 }
 .article-info h2{
-margin-top: 0;
-border-bottom: 1px solid #319df6;
-font-size: 50px;
+  margin-top: 0;
+  border-bottom: 1px solid #319df6;
+  font-size: 50px;
 }
 .article-info{
     flex: 1 1 80%;

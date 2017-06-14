@@ -2,7 +2,7 @@
 font-family: 'Roboto', sans-serif;
 
 body{
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto';
   margin: 0;
   position: fixed;
 
@@ -104,6 +104,7 @@ a:hover, a:focus{
 }
 
 .article{
+/* font-family: something to change font of articles */
   flex: 0 1 28%;
   display: flex;
   margin: 2px;

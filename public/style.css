@@ -1,7 +1,7 @@
-/*This is just a place holder for now */
 
 body{
   font-family: 'Arvo', serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
   position: fixed;
 }
@@ -141,6 +141,14 @@ a:hover, a:focus{
   font-weight: bold;
 }
 
+.article-description{
+  font-size: large;
+}
+
+.article-title{
+  font-size: large;
+}
+
 .article-title:hover{
   cursor: pointer;
   text-decoration: underline;
@@ -156,10 +164,15 @@ a:hover, a:focus{
   color: inherit;
 }
 
-#edit-button:hover,#edit-button:focus{
+/*#edit-button:hover,#edit-button:focus{
   border-top: 7px solid #319df6;
   background-color: #319df6;
   border-bottom: 7px solid #319df6;
+}*/
+
+#edit-button:hover,#edit-button:focus{
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #edit-button:focus{
@@ -313,6 +326,7 @@ a:hover, a:focus{
   display: inline-block;
   height: 100%;
   padding-right: 65px;
+  width: 105px;
 }
 
 .article-main{

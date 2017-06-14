@@ -338,6 +338,7 @@ a:hover, a:focus{
    display: flex;
    position: fixed;
    z-index: 999;
+   z-index: 999;
    padding: 1em;
    border: 1px solid #319df6;
    border-right: 0;
@@ -350,7 +351,10 @@ a:hover, a:focus{
  }
 
 .article-image{
+  display: block;
+  margin: 0 auto;
   padding-left: 20px;
+
 }
 
 .article-author{

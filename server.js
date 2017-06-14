@@ -40,12 +40,22 @@ app.get('/', function(req,res,next){
 app.get('/articles/:index', function(req,res,next){
 	console.log(req.params.index);
 	var has_article = article_data[req.params.index];
+
+	console.log(article_data[req.params.index].title);
+	console.log(article_data[req.params.index].content);
+	console.log(article_data[req.params.index].author);
+	console.log(article_data[req.params.index].image);
+
 	if(has_article){
 		var args = {
-			article_data: [{title: article_data[req.params.index].title,
+			/*article_for_article: {title: article_data[req.params.index].title,
 			content: article_data[req.params.index].content,
 			author: article_data[req.params.index].author,
-			image: article_data[req.params.index].image}]
+			image: article_data[req.params.index].image}*/
+			title: article_data[req.params.index].title,
+			content: article_data[req.params.index].content,
+			author: article_data[req.params.index].author,
+			image: article_data[req.params.index].image
 		};
 		res.render('articlePage', args);
 		}

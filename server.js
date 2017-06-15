@@ -1,5 +1,4 @@
 
-
 //get yo' node.js packages, yeah
 var express = require('express');
 var express_handlebars = require('express-handlebars');
@@ -38,20 +37,16 @@ app.get('/', function(req,res,next){
 
 //this bad boy below handles errors like a boss
 app.get('/articles/:index', function(req,res,next){
-	console.log(req.params.index);
+	//console.log(req.params.index);
 	var has_article = article_data[req.params.index];
 
-	console.log(article_data[req.params.index].title);
-	console.log(article_data[req.params.index].content);
-	console.log(article_data[req.params.index].author);
-	console.log(article_data[req.params.index].image);
+	//console.log(article_data[req.params.index].title);
+	//console.log(article_data[req.params.index].content);
+	//console.log(article_data[req.params.index].author);
+	//console.log(article_data[req.params.index].image);
 
 	if(has_article){
 		var args = {
-			/*article_for_article: {title: article_data[req.params.index].title,
-			content: article_data[req.params.index].content,
-			author: article_data[req.params.index].author,
-			image: article_data[req.params.index].image}*/
 			title: article_data[req.params.index].title,
 			content: article_data[req.params.index].content,
 			author: article_data[req.params.index].author,
@@ -73,6 +68,7 @@ app.get('*', function(req,res){
 	res.render('404Page', args);
 })
 
+//attempted post call but ran out of time
 // app.post('/articles/:index/addArticle', function(req, res, next){
 // 	var article = req.params.index;
 // 	console.log(" == got post request for", index);
@@ -91,7 +87,7 @@ app.get('*', function(req,res){
 //
 // 		})
 // 	}
-// 
+//
 // })
 
 //listen listen listen shhh

@@ -4,6 +4,7 @@ var express = require('express');
 var express_handlebars = require('express-handlebars');
 var path = require('path');
 var fs = require('fs');
+var bodyParser = require('body-parser');
 
 var app = express(); //use app for all your express stuff
 
@@ -24,6 +25,7 @@ var article_page_template = fs.readFileSync('./views/404Page.handlebars');
 app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -68,27 +70,41 @@ app.get('*', function(req,res){
 	res.render('404Page', args);
 })
 
-//attempted post call but ran out of time
-// app.post('/articles/:index/addArticle', function(req, res, next){
-// 	var article = req.params.index;
-// 	console.log(" == got post request for", index);
-// 	var article = articles[req.params.index];
-//
-// 	if(article){
-// 		if(req.body && req.body.url{
-// 			var newArticle = {
-// 				title: req.body.title,
-// 				content: req.body.content,
-// 				description: req.body.description,
-// 				author: req.body.author,
-// 				image: req.body.url
-// 			};
-// 			article.newArticle || [];
-//
-// 		})
-// 	}
-//
-// })
+// attempted post call but ran out of time
+app.post('/articles/addArticle', function(req, res, next){
+	var article = article_data;
+	console.log(article_data);
+		console.log("in the server functon thing");
+	// var article = articles[req.params.index];
+
+	if(article){
+		console.log(req.body);
+		if(req.body){
+			var newArticle = {
+				title: req.body.title,
+				content: req.body.content,
+				description: req.body.description,
+				author: req.body.author,
+				image: req.body.image
+			};
+			article = article || [];
+
+			article.push(newArticle);
+			fs.writeFile('articles.json', JSON.stringify(article_data), function(err){
+				if(err) {
+					res.status(500).send("Unable to save to database");
+				}else{
+					res.status(200).send();
+				}
+			});
+		}else {
+			res.status(400).send("missing a Title");
+		}
+
+	}else {
+		next();
+	}
+	});
 
 //listen listen listen shhh
 app.listen(port_num, function(){

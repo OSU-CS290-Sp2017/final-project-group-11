@@ -21,16 +21,27 @@ function closeEditArticleModal(){
   //Hide article edit modal and modal backdrop
   modalBackground.classList.add('hidden');
   editArticleModal.classList.add('hidden');
+
+  clearArticleInput();
 }
 
-//gets ID of article:
-function getArticleIDFromLocation(){
-  var pathComponents = window.location.pathname.split('/');
-  if(pathComponents[0] !== '' && pathComponents[1] !== 'article'){ //might not be 'article', need to test
-    return null;
+// gets ID of article:
+// function getArticleIDFromLocation(){
+//   var pathComponents = window.location.pathname.split('/');
+//   if(pathComponents[0] !== '' && pathComponents[1] !== 'articles'){ //might not be 'article', need to test
+//     return null;
+//   }
+//   return pathComponents[2];
+// }
+
+function clearArticleInput(){
+  var inputElems = document.getElementsByClassName('article-input');
+  for (var i = 0; i < inputElems.length; i++){
+    var input = inputElems[i].querySelector('input, textarea');
+    input.value = '';
   }
-  return pathComponents[2];
 }
+
 
 //attempted store new article in articles.json file but ran out of time:
 // function storeNewArticle(articleID, newTitle, newContent, newDescription, newAuthor, newImage){
@@ -82,6 +93,82 @@ function getArticleIDFromLocation(){
 // }
 
 
+function generateArticle(){
+  var articleTitle = document.getElementById('article-title-input').value || '';
+  var artContent = document.getElementById('article-content-input').value || '';
+  var artDescription = document.getElementById('article-description-input').value || '';
+  var artAuthor = document.getElementById('article-author-input').value || '';
+  var artImage = document.getElementById('article-image-input').value || '';
+
+
+  console.log(articleTitle);
+  console.log(artContent);
+  console.log(artDescription);
+  console.log(artAuthor);
+  console.log(artImage);
+  if(artImage.trim()){
+    console.log('first IF');
+
+    storeArticle( articleTitle,artContent, artDescription, artAuthor, artImage, function(err){
+      if (err){
+        alert("unable to save article. got this error: \n\n" + err );
+      }else {
+        console.log('Handlebars');
+        // var source = $('#article_for_main').html();
+        // var articleTemplate = Handlebars.compile(source);
+          var articleTemplate = Handlebars.templates.article_for_main;
+        var articleData = {
+          title: articleTitle,
+          description: artDescription
+        };
+        var articleHTML = articleTemplate(articleData);
+        var articleListContainer = document.querySelector('.article-container');
+        articleListContainer.insertAdjacentHTML('beforeend', articleHTML);
+      }
+    });
+// }
+    console.log('closeModal');
+    closeEditArticleModal();
+}else {
+  alert('I need an image!!!');
+}
+
+
+}
+function storeArticle( title,content, description, author, image, callback) {
+  console.log('StoreArticle');
+    var postURL = "/articles/addArticle";
+
+
+    var postRequest = new XMLHttpRequest();
+    postRequest.open('POST', postURL);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function(event){
+      var error;
+      if (event.target.status !== 200){
+        error = event.target.response;
+      }
+      callback(error);
+    });
+
+    var postBody = {
+      title: title,
+      content: content,
+      description: description,
+      author: author,
+      image: image
+    };
+      console.log('posting');
+    postRequest.send(JSON.stringify(postBody));
+  }
+
+
+
+
+
+
+
 //this searches through the articles on the main screen. Code for this function was inspired by Dr. Hess's tweeter page
 function articleSearch(){
   var searchInput = document.getElementById('navbar-search-input').value;
@@ -100,6 +187,7 @@ function articleSearch(){
     }
   });
 }
+
 
 //this would have generated a rando article for the user but ran out of time:
 // function random_article(){
@@ -137,8 +225,8 @@ editArticleButton.addEventListener('click', showEditArticleModal);
 var modalCancelButton = document.querySelector('#edit-article-modal .modal-cancel-button');
 modalCancelButton.addEventListener('click', closeEditArticleModal);
 
- // var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
- // modalAcceptButton.addEventListener('click', insertNewArticle);
+ var modalAcceptButton = document.querySelector('#edit-article-modal .modal-accept-button');
+ modalAcceptButton.addEventListener('click', generateArticle);
 
 var searchInput = document.getElementById('navbar-search-input');
 searchInput.addEventListener('input', articleSearch);

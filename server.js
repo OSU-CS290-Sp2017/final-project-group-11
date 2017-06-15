@@ -73,12 +73,11 @@ app.get('*', function(req,res){
 // attempted post call but ran out of time
 app.post('/articles/addArticle', function(req, res, next){
 	var article = article_data;
-	console.log(article_data);
 		console.log("in the server functon thing");
 	// var article = articles[req.params.index];
 
 	if(article){
-		console.log(req.body);
+
 		if(req.body){
 			var newArticle = {
 				title: req.body.title,

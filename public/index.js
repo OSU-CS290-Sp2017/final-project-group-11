@@ -35,8 +35,9 @@ function closeEditArticleModal(){
 // }
 
 function clearArticleInput(){
-  var inputElems = document.getElementsByClassName('article-input');
+  var inputElems = document.getElementsByClassName('article-input-modal');
   for (var i = 0; i < inputElems.length; i++){
+    console.log('bing');
     var input = inputElems[i].querySelector('input, textarea');
     input.value = '';
   }
@@ -100,12 +101,6 @@ function generateArticle(){
   var artAuthor = document.getElementById('article-author-input').value || '';
   var artImage = document.getElementById('article-image-input').value || '';
 
-
-  console.log(articleTitle);
-  console.log(artContent);
-  console.log(artDescription);
-  console.log(artAuthor);
-  console.log(artImage);
   if(artImage.trim()){
     console.log('first IF');
 
@@ -126,7 +121,7 @@ function generateArticle(){
         articleListContainer.insertAdjacentHTML('beforeend', articleHTML);
       }
     });
-// }
+
     console.log('closeModal');
     closeEditArticleModal();
 }else {
